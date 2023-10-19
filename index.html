@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <form>
+        <label for="city">Enter a city:</label>
+        <input type="text" id="city" name="city">
+        <button type="submit">Get Weather</button>
+    </form>
+    <div id="weather"></div>
+    <script>
+        const form = document.querySelector('form');
+        const weatherDiv = document.querySelector('#weather');
+
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const city = form.elements.city.value;
+            const response = await fetch(`/weather?city=${city}`);
+            if (response.status === 404) {
+                weatherDiv.innerHTML = '<p>City not found</p>';
+            } else {
+                const data = await response.json();
+                const weather = `
+                    <p>Description: ${data.description}</p>
+                    <p>Temperature: ${data.temperature} &deg;C</p>
+                `;
+                weatherDiv.innerHTML = weather;
+            }
+        });
+    </script>
+</body>
+</html>

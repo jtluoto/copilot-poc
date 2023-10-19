@@ -1,0 +1,28 @@
+{
+  "name": "copilot-poc",
+  "version": "1.0.0",
+  "description": "A small PoC of GitHub Copilot",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --forceExit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NorthernCodesPublic/copilot-poc.git"
+  },
+  "author": "Northern Codes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NorthernCodesPublic/copilot-poc/issues"
+  },
+  "homepage": "https://github.com/NorthernCodesPublic/copilot-poc#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.1.3"
+  }
+}
